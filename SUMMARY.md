@@ -10,8 +10,8 @@
     * [Data Types](Grammar/DataTypes.md)
     * [Constraints](Grammar/Constraints.md)
 * [Editor Format](EditorFormat/README.md)
-    * [Structured Editor Format](EditorFormat/StructuredEditorFormat.md)
-    * [CSS Class Reference](EditorFormat/CSSClassReference.md)
+    * [Structured Editor](EditorFormat/StructuredEditorFormat.md)
+    * [HTML Template Reference](EditorFormat/TemplateReference.md)
 * [Output Format](OutputFormat/README.md)
 * [Integration](Integration/README.md)
 
