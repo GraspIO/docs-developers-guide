@@ -1,6 +1,6 @@
-# Structured Editor Format
+# Editor
 
-The editor format used by the structured editor has two main sections:
+The editor has two main sections:
 
 * *Stylesheets* is a place you can define your own CSS styles.
 * *Templates* is a place where you define editor formatting templates for classes in your grammar.
