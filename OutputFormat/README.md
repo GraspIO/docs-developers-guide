@@ -1,6 +1,8 @@
 # Output Format
 
-Editing documents that are grammar-driven is nice, but what is the purpose of creating them in the first place? Sometimes all you need is the JSON format in which the documents are stored. However, in many cases they need to be transformed into some ofther format - text or code - that is needed by the computer system that will be using this information.
+Editing documents that are grammar-driven is nice, but what is the purpose of creating them in the first place? It is to produce some meaningful output that can be consumed by the systems that you or your users control.
+
+Sometimes all you need is the JSON format in which the documents are stored. However, in many cases they need to be transformed into some ofther format - text or code - that is needed by the computer system that will be using this information.
 
 For example, you may present configuration document to a user for editing in a nice form-like format, but the application that is configured by it needs an XML file or a programmatic script.
 

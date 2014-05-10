@@ -21,7 +21,7 @@ If you do not specifiy template for some class, a default outliner template will
 
 You can add new template elements in the 'Templates' section. Here is how the template element looks like:
 
-![Template Editor](img/TemplateEditor.png)
+![Template Editor](img/StructuredEditorFormatTemplate.png)
 
 This element has the following attributes:
 
