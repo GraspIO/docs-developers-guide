@@ -37,7 +37,7 @@ It's also worth here to bring attention to the dynamic nature of the `value` att
 
 `Reference` type is derived from the same abstract `Feature` superclass as the `Attribute` and has the same features:
 
-![Reference](img/Reference.md)
+![Reference](img/Reference.png)
 
 The only difference is that, unlike `Attribute`, you cannot use it to create new element instances. It can only point to existing elements of the specified `type` (or its subtypes), created elsewhere.
 
