@@ -19,4 +19,6 @@
     * [Generator API](OutputFormat/GeneratorAPI.md)
     * [Debugger](OutputFormat/Debugger.md)
 * [Integration](Integration/README.md)
+    * [User Interface](Integration/UserInterface.md)
+    * [Content Delivery](Integration/Output.md)
 
