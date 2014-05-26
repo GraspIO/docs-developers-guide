@@ -7,7 +7,7 @@ Features provide means to attach user-entered (or user-selected) information to 
 
 Attributes are used to put together the content of your model, to define new informational entities in it. References are used to avoid duplication. For example, you can define an element of class "Variable" in one place, and then put references to that variable in all expression elements that use it.
 
-When you add new feature to a class, Grasp will ask you to select its type first - Attribute or Reference. Then you will need to populate its own properties, which are describd below.
+When you add new feature to a class, Grasp will ask you to select its type first - Attribute or Reference. Then you will need to populate its own properties, which are described below.
 
 ## Attributes
 
