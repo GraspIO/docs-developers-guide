@@ -4,11 +4,11 @@ You don't call the generator yourself, except when debugging it. All generation 
 
 However, EJS templates that produce the output may need to use Javascript objects and methods exposed by the generator in order to implement template's logic.
 
-### element
-`element` is a parameter within the template that indicates the currently processed model element. From it you can access element's features by their name, e.g. `element.myAttr` or `element['myAttr']`.
+### element, $e
+`element` (`$e`) is a parameter within the template that indicates the currently processed model element. From it you can access element's features by their name, e.g. `element.myAttr` or `$e['myAttr']`.
 
-### next(child, connector)
-The most important function is `next()` - it instructs generator to visit attribute(s) of the current element and apply their templates.
+### next(child, connector), $n
+The most important function is `next()` (`$n()`): it instructs generator to visit attribute(s) of the current element and apply their templates.
 
 It takes two optional parameters:
 
@@ -17,19 +17,23 @@ It takes two optional parameters:
 
 To better understand the `connector` attribute, consider the following example: you need to generate a code 'A or B or C', where A, B and C are values in the 'listAttr' attribute. You can produce this output by putting `<% next(element.listAttr), ' or ' %>` into the template - it will automatically insert 'or' between each element.
 
+### context ($c)
+
+This is a global context object shared between all templates throughout generation. It can be used as a storage to pass data or functions between the templates. For example, a "before run" template can define a reusable function that all other templates could use; a tempate processing model's top element could set a flag used to modify behavior of child templates; and so on.
+
 ### setHeader(header, value)
 
 This method is used to add custom headers to the target document generated from the model. The semantics of the headers is up to you - the subscriber for the target should know what to do with the headers that your format generates.
 
 The parameters that this method takes are the name of the header (string) and an arbitrary JSON value.
 
-### resolve(ref)
+### resolve(reference) ($r())
 
-Use this method to work with reference features of your element. It takes the reference GUID (i.e. the value of the feature) as a parameter and returns an actual model element for that reference. Then you can extract values from the element and insert them into your output, e.g.:
+Use `resolve()` (`$r()`) method to work with reference features of your element. It takes the reference GUID (i.e. the value of the feature) as a parameter and returns an actual model element for that reference. Then you can extract values from the element and insert them into your output, e.g.:
 
 `<%- resolve(element.myRefFeature).someAttribute %>`
 
-> Note that you **cannot** pass resolved references to the `next()` method in attempt to traverse the tree of another model - this can lead to unexpected results.
+> Please note that currently you **cannot** pass resolved references to the `next()` method in attempt to traverse the tree of another model - this can lead to unexpected results.
 
 ### parent(_element)
 
@@ -46,4 +50,4 @@ Finds an ancestor of the current element that matches specified criteria. It wil
 
 ### stack()
 
-Returns a list with all elements that lead from the root to the current element.
+Returns a list with all elements that lead from the model root element to the current one.

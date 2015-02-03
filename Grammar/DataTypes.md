@@ -1,8 +1,8 @@
 # Data Types
 
-As we learned, classes are used to define structures that contain multiple properties, whereas data types represent simple values. They can be used to define a type of class attribute.
+As we've learned in the previous section, classes are used to define structures that contain multiple properties, whereas data types represent simple values. Both can be used when defining a type of a class attribute.
 
-Just as classes, data types form their own type hierarchy, i.e. can be derived one from another, usually with a purpose of adding *constraints* to achieve specialized editor behavior.
+Just as classes, data types form their own type hierarchy, i.e. can be derived one from another, usually with a purpose of adding *constraints* to achieve specialized editing and validation behavior.
 
 ## Standard Data Types
 
@@ -14,16 +14,16 @@ The most basic data types are:
 * `integer` - a whole number.
 * `date` - a date/time.
 * `regexp` - a regular expression.
-* `file` - a file that can be stored on the server.
+* `file` - a file that is stored on the Grasp server.
 
 There are also several standard data types derived from the baic ones:
 
 * `url`: `string` - relative or absolute URL.
 * `html`: `string` - HTML-formatted rich text. A built-in rich text editor is used for editing such values.
 * `text`: `string` - unformatted text that can be edited in a text area.
-* `image`: `file` - an uploaded image such as icon.
+* `image`: `file` - an uploaded image such as an icon.
 
-Different data types have their own visual representations and editor widgets in Grasp. For example, strings and numbers are edited via a text field, but are validated differently. Values for date fields are selected from a pop-up calendar. HTML fields are edited using visual editor or, optionally as HTML markup.
+Different data types have their own visual representations and editor widgets in Grasp. For example, strings and numbers are edited in a text field but are validated differently. Values for date fields are selected from a pop-up calendar. HTML fields are edited using rich text editor or optionally as HTML markup.
 
 ## Custom Data Types
 

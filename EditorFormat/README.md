@@ -1,14 +1,14 @@
 # Editor Format
 
-By defining an editor format you can tell Grasp what an editor for your grammar should look like.
+By defining an editor format you can describe to Grasp how you want the editor for your grammar to look like.
 
-If you don't have one, Grasp will automatically generate a default outliner-style editor format for your model when you open it. An outliner is a special type of structured editor that represents elements as nested collapsible sections with attributes inside. Actually, a good example of it is a default format of an editor for the grammar itself:
+Grasp automatically generates a default 'Outline' editor format for your model if there is the grammar does not have its own custom format. It shows elements as a tree of nested collapsible sections with attributes inside:
 
 ![Default Editor Format](img/DefaultEditorFormat.png)
 
-It automatically highlights class and attribute names and hides optional attributes, unless user has put some values in them.
+It automatically highlights class and attribute names and hides optional attributes, unless user has already entered a value in them.
 
-The default editor is a good choice for many situations, and you can further enhance it with class and feature labels in the grammar itself but often you will want to make your editor look differently, e.g.:
+The default editor is a good choice for many situations, and you can further enhance it with class and feature labels in the grammar itself but frequently you will want to make your editor look differently, for example:
 
 * Change the styling.
 * Arrange element attributes in a form-like panel.

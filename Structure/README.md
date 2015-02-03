@@ -1,14 +1,12 @@
 # Repository and Model Structure
 
-First thing that Grasp developers need to understand is how content is organized and structured in it. From the user guide you already know that Grasp stores it in *repositories* that contain documents called *models*. A single Grasp installation can contain multiple repositories, each of which can contain multiple models.
+From the user guide you may already know that Grasp stores content in repositories that contain structured documents, called models.
 
-A repository is identified by its GUID which is unique within Grasp installation.
+A repository is identified by a unique string GUID.
 
-Repositories belong to *organizations*, also known as *tenants*. Each organization can have multiple repositories.
+Repositories belong to teams. A registered user can own or belong to multiple teams and will have read-write access to all their repositories.
 
-A user in Grasp can belong to multiple organizations and will have access to all repositories of those organizations.
+In addition, registered users and anonymous visitors can access repositories that belong to other teams, as long as they are marked as public.
 
-Users can also access repositories that are marked as 'public', although they will not be able to contribute to them unless they are members of the organization that owns such repository.
-
-Within repository, there is no intrinistic folder structure by which models are grouped together. Instead, Grasp relies on dynamic organization strategies such as grouping all models of the same type, or dynamically generating folders based on models' tags.
+For each user Grasp creates a private representation of the repository called workbench. It contains user changes until they have been published into the repository where other users can see them.
 

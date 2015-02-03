@@ -15,7 +15,8 @@ These CSS classes form the structure of the template, indicating where to place 
 | `ctn_{feature-name}`   | Used together with `ct_attribute` or `ct_reference` to indicate which feature it is for |
 | `ct_auto_hide`    | Used together with `ct_attribute` or `ct_reference` to hide this feature if it has no values |
 | `ct_always_hide`  | Used together with `ct_attribute` or `ct_reference` to always hide this feature when element is not selected |
-| `ct_slot`         | Slot for the actual attribute or reference values |
+| `ct_slot`         | Slot for the actual attribute or reference values
+| `ct_connector`         | Used inside `ct_slot` to separate individual values |
 
 ## Supporting Markup
 

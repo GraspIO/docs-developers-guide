@@ -3,7 +3,7 @@
 Features provide means to attach user-entered (or user-selected) information to elements created from the class. `Feature` is an abstract class in the system grammar that has two concrete subclasses:
 
 * `Attribute` represents simple and complex values stored by value. I.e. when a new attribute is added to an element, be it a primitive value or an instance of a class, its content is stored right there in the element.
-* `Reference` represents a reference to an element defined in some other place - in the same or other model. References can only point to complex elements, not primitive values.
+* `Reference` represents a reference to an element defined in some other place - in the same or another model. References can only point to elements, not primitive values.
 
 Attributes are used to put together the content of your model, to define new informational entities in it. References are used to avoid duplication. For example, you can define an element of class "Variable" in one place, and then put references to that variable in all expression elements that use it.
 
@@ -29,7 +29,7 @@ An attribute can have the following features:
 * `value` (type is dynamically controlled by the type attribute, optional) - default value to be used for this attribute when elements of the class a created.
 * `Constraint` (optional list of `Constraint` elements) - editor/validation constraints that will be used to control the values that can be stored in this attribute. Constraints are discussed later in this guide.
 
-To repeat, attribute's type can be either primitive value that has a *data type*, which is explained later, or a complex value, i.e. an instance of a *Class*, in which case it can contain its own features.
+To reiterate, an attribute's type can be either a primitive value that has a *data type*, which is explained later, or a complex value, i.e. an instance of a *Class*, in which case it can contain its own nested features.
 
 It's also worth here to bring attention to the dynamic nature of the `value` attribute - its type and validation logic change automatically based on what was selected in the `type` attribute for the same class. This is a first example of a *context-aware grammar*, where user's choices in one part of a model have immediate effect on other, related parts. Such dynamic nature is what makes Grasp a powerful tool in modeling complex semantic information structures.
 
@@ -39,8 +39,8 @@ It's also worth here to bring attention to the dynamic nature of the `value` att
 
 ![Reference](img/Reference.png)
 
-The only difference is that, unlike `Attribute`, you cannot use it to create new element instances. It can only point to existing elements of the specified `type` (or its subtypes), created elsewhere.
+The only difference is that, unlike the `Attribute`, you cannot use it to create new element instances. It can only point to existing elements of the specified `type` (or its subtypes), created elsewhere.
 
 The value of a reference is the GUID of the referenced element, which is dynamically substituted by its label or name when shown in the editor.
 
-Thanks to that, you can rename Grasp elements at any time without risk of breaking references that point at them.
+Thanks to that you can rename Grasp elements at any time without risking to break references pointing at them.

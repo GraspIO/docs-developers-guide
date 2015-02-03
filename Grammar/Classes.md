@@ -1,25 +1,28 @@
 # Classes
 
-Classes are main building blocks of a grammar and can be used to define complex structures.
+Classes are the main building blocks of a grammar and are used to define complex data structures or language phrases.
 
-For example, if you develop a domain-specific language (DSL), you will need to define one class per production rule of your language's syntax; if you define a schema for a database, each class can represent a table; and so on.
+For example, when creating a domain-specific language (DSL), you will need to define at least one class per production rule of your language's syntax. When defining a schema for a database, each class can represent a table. For configuration files it is a section, and so on.
 
-Strictly speaking, classes in Grasp are not what you might expect if you came from an object-oriented programming background. They don't have any methods and are more like data structures. Actually, even better way to think of them as sophisticated hierarchical templates with placeholders for user-entered values and intrinistic structure into which those values are organized. They are the vocabulary through which your users will form sentences and combine them into their prose, of sorts.
+Classes in Grasp are not the same thing as classes in object-oriented programming. They are more like data structures.
 
-Classes are used for building editors and for generating output (code, etc.), so their primary purpose is to restrict user choices and show only what is relevant in a particular part of the edited document.
+Another way to think of them is as of hierarchical templates with placeholders for user-entered values, combined with the structure into which those values are organized.
+
+Classes are used for generating editors and output such as code or configuration files, so one of their purposes is to restrict user choices and show only what is relevant in the particular part of the edited document.
 
 ## Class Features
-Just like any model element, each class in the grammar is automatically assigned a unique GUID that serves as a type for moodel elements and is stored in their `_class` attribute.
+Just like any other model element, each class in a grammar is automatically assigned a unique GUID. It serves as a type for elements created from this class and is stored in their `_class` attribute.
 
-> Class definition elements also have a type in Grasp - `g_Class`: `g` is the GUID of the 'system grammar' model, which is a mother of all grammars; `Class` is the id of the 'Class' element in it.
+Class elements also have a type: `g_Class`, where `g` is the GUID of the system grammar (a mother of all grammars) and `Class` is the id of the 'Class' element in it.
 
-> `Class` type is derived from the abstract `Classifier` type which is also a supertype for all primitive data types.
+`Class` type is derived from the abstract `Classifier` type which is also a supertype for all primitive data types.
+
 Classes can have the following features:
 
 ![Class](img/Class.png)
 
-* `name` (string, required) - a more readable name for the class.
-* `label` (string, optional) - even more user-friendly name which will be shown in all places where this class is used. Normally you want to have just the class name, to avoid confusion, but there are situations where label is helpful too.
+* `name` (string, required) - internal name of the class.
+* `label` (string, optional) - even more user-friendly name that will be shown in all places where this class is used. Normally you would want to specify just the class name to avoid confusion, but there are situations where label is helpful too.
 * `description` (rich text, optional) - description of the class in rich text format, which will be shown in popovers for elements of that class. Use it for documenting its purpose and to help users.
 * `abstract` (boolean, optional, default is false) - marks this class as abstract only, which means you can't create elements from it, but you can use it as a superclass for other classes.
 * `superTypes` (list of `Class` references, optional) - classes that this class derives its properties from.
@@ -44,14 +47,12 @@ Grasp supports multiple inheritance, meaning that a class can have several class
 
 ### Subtypes
 
-> **Stability**: experimental
+In addition to classic inheritance, being a template engine, Grasp also supports a more exotic capability - injecting class as a supertype for other classes by using its `subTypes` feature.
 
-In addition to classic inheritance, being a template engine, Grasp also supports a more exotic, reverse capability - injecting class as a supertype for other classes by using its `subTypes` feature.
+In a world of object-oriented programming this approach is not used much because it violates the rules of class inheritance and encapsulation.
 
-In a world of object-oriented programming this approach is not used because it breaks some basic rules of class inheritance and encapsulation.
+However, Grasp is not a programming language. It is a templating engine that is built with a different purpose in mind: to give users what they need in the editor and to maximize reuse of existing grammars. Sometimes you need to inject your class on top of somebody else's class hierarchy so that you can reuse prebuilt grammars and make your own grammar *mashups*.
 
-However, Grasp is not a programming language. It's a templating tool that is built with different purpose in mind: to give users what they need to see in the editor and maximize reuse of existing grammars. And sometimes you need to inject your Grasp in someone else's class hierarchy so that you can reuse prebuilt grammars to make your own *mashup grammars*.
+For example, let's say somebody has already defined a grammar for a rule expression editor, while somebody else devloped a formula editor, and now you want to combine them to give your users an ability to use either of them when authoring their document. All you need to do in such case is define your own class and list both the formula editor and the expression editor as its subtypes.
 
-For example, let's say somebody has already defined a grammar for a rule expression editor, and somebody else did the same for a formula editor, and now you want to combine them to give users ability to use either of them in the same part of their document. All you need to do is define your own class and list both the formula editor and the expression editor as its subtypes.
-
-> **Note**: there are other ways of achieving the same effect in Grasp, although in less elegant way (e.g. by wrapping such external classes as features of your own 'envelope' classes). This capability is experimental and should be used with caution. There is a chance that it will be deprecated in the future releases of Grasp.
+> Note: there are other ways of achieving the same effect in Grasp, although in less elegant way: e.g. by specifying external classes as features of your own 'envelope' class.

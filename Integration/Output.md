@@ -4,9 +4,9 @@ In most cases the models or output generated from them will need to be delivered
 
 In some cases it can simply be the JSON format of the models themselves. In other cases it can be target format produced by an output generator, as was described earlier.
 
-The **Publish** panel in the editor is a helpful resource to learn how to access this content:
+The **Deploy** panel is a helpful resource to learn how to access this content:
 
-![Publish Panel](img/PublishPanel.png)
+![Deploy Panel](img/PublishPanel.png)
 
 You can programmatically obtain model data or generated output in a couple of ways:
 

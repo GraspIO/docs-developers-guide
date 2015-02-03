@@ -1,5 +1,11 @@
 # HTML Template Format
 
+With this type of format you can describe element editor template by writing HTML code, annotated by Grasp CSS classes.
+
+Here is an example of how the HTML template looks like:
+
+![Template Editor](img/HTMLEditorFormatTemplate.png)
+
 ## Template Structure
 
 When rendered in the browser by the structured editor, models are represented by a HTML DOM tree marked with special CSS classes that indicate roles of its nodes:
@@ -28,14 +34,14 @@ Element starts
   Feature 1: <span class='ct_slot'></span>
 </span>
 <span class='ct_reference ctn_feature2'>
-  Feature 2: <span class='ct_slot'></span>
+  Feature 2: <span class='ct_slot'><span class='ct_connector'>, </span></span>
 </span>
 Element ends
 ```
 
-The rest of the DOM structure is added by Grasp when model is opened in the browser.
+The rest of the DOM content, such as actual model values, is inserted by Grasp when model is opened in the browser.
 
 When you add a template for a grammar class, Grasp automatically generates default template for that class to use as a starting point. It contains HTML elements for all features of the class, as well as other frequently used standard markup, which is described in the next section.
 
-You can customize generated template to make the editor for this grammar class look the way you want.
+You can then customize generated template to make the editor for this grammar class to look the way you want.
 
